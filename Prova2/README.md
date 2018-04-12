@@ -39,7 +39,7 @@ void loop()
 
   nh.spinOnce();
 }
-~~~*
+~~~
 
 Now let's analyze code.
 
@@ -77,7 +77,7 @@ msg_arr.layout.dim[0].stride = 1*8;
 msg_arr.layout.data_offset = 0;
 msg_arr.data = (float *)malloc(sizeof(float)*8);
 nh.advertise(msg_arr_pub);
-~~~*
+~~~
 Initialize the ROS node.
 Allocate the layout dimension of the array, in this case twice as the dimension of the type std_msg/MultiArrayDimension.
 Set the length of the array's data, in this case 8.
@@ -108,4 +108,4 @@ nh.spinOnce();
 ~~~
 Use a cycle for to assign a value for each cell of the array.
 In this example the value of each cell is equal to the cell index.
-The array msg_arr is not published continuously but only every 50 milliseconds. 
+The array msg_arr is not published continuously but only every 50 milliseconds.
